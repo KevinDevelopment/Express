@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Products = require("../model/Products");
+const Verify = require("../../middlewares/verify");
 
-router.delete("/deleteProducts/:id", (request, response) => {
+router.delete("/deleteProducts/:id", Verify, (request, response) => {
 
     const {id} = request.params;
 
